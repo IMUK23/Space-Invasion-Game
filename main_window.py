@@ -1,14 +1,16 @@
 import sys,pygame
+from setting import Settings
 def run_game():
     pygame.init()
-    screen=pygame.display.set_mode((1200,800))
+    ##ai_setting is an object of Setting class
+    ai_settings=Settings()
+    screen=pygame.display.set_mode((ai_settings.width,ai_settings.height))
     pygame.display.set_caption("Space Invasion")
-    bgcolor=(230,230,230)
     while True:
         for event in pygame.event.get():
             if event.type== pygame.QUIT:
                 sys.exit()
-        screen.fill(bgcolor)        
+        screen.fill(ai_settings.bgcolor)        
         pygame.display.flip()
 run_game()
 
