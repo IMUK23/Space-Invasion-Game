@@ -8,6 +8,9 @@ def check_event(ai_settings, screen, ship, bullets):
             check_keydown_event(event, ai_settings, screen, ship, bullets)
         elif event.type == pygame.KEYUP:
             check_keyup_event(event,ship)
+            ### if Q is pressed game will quit
+        elif event.type == pygame.K_q:
+            system.exit()    
             
 def check_keydown_event(event, ai_settings, screen, ship, bullets):
     if event.type == pygame.KEYDOWN:
